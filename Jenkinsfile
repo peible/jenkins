@@ -2,22 +2,26 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Clone Repo') {
             steps {
-                echo 'Building...'
-                // Add your build steps here
+                script {
+                    sh 'git clone https://github.com/your-username/your-repo.git workspace'
+                }
             }
         }
-        stage('Test') {
+        stage('List Branches') {
             steps {
-                echo 'Testing...'
-                // Add your test steps here
+                script {
+                    sh './scripts/branch-commit.sh'
+                }
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Add your deploy steps here
+    }
+    post {
+        success {
+            script {
+                def commitSha = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                sh "./scripts/notify-tg.sh ${commitSha}"
             }
         }
     }
