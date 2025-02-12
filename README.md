@@ -8,3 +8,11 @@
     ├── branch-commit.sh
     └── notify-tg.sh
 ```
+
+
+
+
+Get chat_id
+```
+https://api.telegram.org/bot<TOKEN>/getUpdates
+```

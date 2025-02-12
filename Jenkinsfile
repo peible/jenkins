@@ -5,14 +5,14 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 script {
-                    sh 'git clone https://github.com/your-username/your-repo.git workspace'
+                    sh 'git clone https://github.com/peible/jenkins.git workspace'
                 }
             }
         }
         stage('List Branches') {
             steps {
                 script {
-                    sh './scripts/branch-commit.sh'
+                    sh './scripts/branch-list.sh'
                 }
             }
         }
