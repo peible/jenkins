@@ -8,7 +8,8 @@
     ├── branch-commit.sh
     └── notify-tg.sh
 ```
-big
+
+dfkjfdklsajfkldsjafk;lds
 
 
 Get chat_id
