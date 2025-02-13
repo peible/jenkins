@@ -9,7 +9,7 @@
     └── notify-tg.sh
 ```
 
-fdfd
+dfkjfdklsajfkldsjafk;lds
 
 
 Get chat_id
